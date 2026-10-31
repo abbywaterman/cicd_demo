@@ -24,7 +24,7 @@ jobs:
         python-version: '3.x' # Use a recent stable Python version
 
     - name: Install dependencies (including Black)
-      # This installs all packages needed by demo_make_llm_call.py and the linter
+      # This installs all packages needed by python 01-llm_call.py and the linter
       run: pip install -r requirements.txt
 
     - name: Run Black Code Formatting Check
@@ -42,7 +42,7 @@ jobs:
       run: |
         echo "--- Starting LLM Generation Script Run ---"
         # 1. Execute the script (Functional CI Test)
-        python demo_make_llm_call.py
+        python python 01-llm_call.py
         
         # 2. Validation Check: Ensure the output file was created (Test Success)
         if [ ! -s loan_payment.py ]; then
